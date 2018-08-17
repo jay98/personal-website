@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-me.component.css']
 })
 export class ContactMeComponent implements OnInit {
-
-  constructor() { }
+  contactForm: FormGroup;
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-  }
+    this.contactForm = this.fb.group({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
 
+    this.contactForm.valueChanges.subscribe(console.log);
+  }
 }

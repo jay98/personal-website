@@ -32,7 +32,7 @@
 
 <!-- Contact -->
 
-<section id="contact">
+<div id="contact">
 
   <div class="inner" style="margin-left: 1.5em">
 
@@ -40,13 +40,13 @@
 
       <!--form method="post" action="https://formspree.io/jaydevparmar1798@gmail.com"-->
 
-      <form role="form" method="post" action="messages.php">
+      <form [formGroup]="contactForm">
 
         <div class="field half first">
 
           <label for="name">Name</label>
 
-          <input type="text" name="name" id="name" placeholder="Type Here" />
+          <input type="text" formControlName="name" id="name" placeholder="Type Here" />
 
         </div>
 
@@ -54,7 +54,7 @@
 
           <label for="email">Email</label>
 
-          <input type="email" name="email" id="email" placeholder="Type Here" />
+          <input type="email" formControlName="email" id="email" placeholder="Type Here">
 
         </div>
 
@@ -62,7 +62,7 @@
 
           <label for="subject">Subject</label>
 
-          <input type="text" name="subject" id="subject" placeholder="Type Here" />
+          <input type="text" formControlName="subject" id="subject" placeholder="Type Here">
 
         </div>
 
@@ -71,11 +71,11 @@
           <label for="message">
             <br/>Message</label>
 
-          <textarea name="message" id="message" rows="6" placeholder="Enter your message"></textarea>
+          <textarea formControlName="message" id="message" rows="6" placeholder="Enter your message"></textarea>
 
         </div>
 
-        <input type="hidden" name="_next" value="http://jayparmar.in/submitted.html" />
+        <input type="hidden" name="_next" value="http://jayparmar.in/submitted.html">
 
         <ul class="actions">
 
@@ -128,5 +128,4 @@
     </section>
 
   </div>
-
-</section>
+</div>

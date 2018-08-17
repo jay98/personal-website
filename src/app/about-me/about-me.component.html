@@ -15,9 +15,9 @@
   <!-- One -->
   <section id="one">
     <div class="inner">
-      <h4>Experienced Technology Analyst with a demonstrated history of working in the finance industry. Skilled in Python, C++,
-        Java, Test Driven Development, and Continuous Integration. Strong administrative professional with a Bachelor's degree
-        focused in Computer Science from North Carolina State University.</h4>
+      <span *ngFor="let weee of paragraphs | async">
+        <h4>{{weee.paragraph}}</h4>
+      </span>
     </div>
   </section>
 
