@@ -56,6 +56,10 @@
 
           <input type="email" formControlName="email" id="email" placeholder="Type Here">
 
+          <span *ngIf="email.invalid && email.touched">
+            Your email does not look right
+          </span>
+
         </div>
 
         <div class="field half sub">

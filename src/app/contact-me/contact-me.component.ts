@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
@@ -12,12 +12,16 @@ export class ContactMeComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm = this.fb.group({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      subject: ['', [Validators.required]],
+      message: ['', [Validators.required]]
     });
 
     this.contactForm.valueChanges.subscribe(console.log);
+  }
+
+  get email() {
+    return this.contactForm.get('email');
   }
 }
