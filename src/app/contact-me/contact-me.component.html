@@ -54,9 +54,9 @@
 
           <label for="email">Email</label>
 
-          <input type="email" formControlName="email" id="email" placeholder="Type Here">
+          <input type="email" formControlName="email" id="email" placeholder="Type Here" [ngClass]="{'red-border-class': email.invalid}">
 
-          <span *ngIf="email.invalid && email.touched">
+          <span *ngIf="email.invalid && email.touched" style="color: #e53935">
             Your email does not look right
           </span>
 

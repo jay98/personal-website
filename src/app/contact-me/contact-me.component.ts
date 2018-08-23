@@ -18,7 +18,7 @@ export class ContactMeComponent implements OnInit {
       message: ['', [Validators.required]]
     });
 
-    this.contactForm.valueChanges.subscribe(console.log);
+    //this.contactForm.valueChanges.subscribe(console.log);
   }
 
   get email() {
